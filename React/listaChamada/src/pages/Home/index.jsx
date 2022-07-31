@@ -4,8 +4,9 @@ import './styles.css'
 
 export function Home() {
 
- let [studentName, setStudentName] = useState(" ")
+ let [studentName, setStudentName] = useState()
  const [students, setStudents] = useState([])
+ const [user, setUser] = useState({name:"", avatar:""})
 
   function handleAddStudent(){
     const newStudent ={
@@ -17,33 +18,35 @@ export function Home() {
 
       })
     }
-    if(studentName !=  " " && studentName != ""){
+    if(studentName != ""){
       setStudents(prevState=>[newStudent, ...prevState])
-      // clearForm()
     }
   }
 
- 
-  
-  // function clearForm(){
-  
-        
-  // }
   useEffect(()=>{
     studentName = ""
     const clearInfo = document.getElementById("inputData")
     clearInfo.value= ""
-    clearInfo.placeholder = 'Digite o nome do aluno' 
-    
   }, [students])
+
+  useEffect(()=>{
+    fetch('https://api.github.com/users/carlos-evieira')
+    .then(response=>response.json())
+    .then(data=>{
+      setUser({
+        name: data.name,
+        avatar: data.avatar_url,
+      })
+    })
+  }, [])
 
   return (  
     <div className="container">
       <header>
         <h1>Lista de Chamada</h1>
         <div>
-          <strong>Kadu Vieira</strong>
-          <img src="https://github.com/carlos-evieira.png" alt="imagem do perfil" />
+          <strong>{user.name}</strong>
+          <img src={user.avatar} alt="imagem do perfil" />
         </div>
 
       </header>
