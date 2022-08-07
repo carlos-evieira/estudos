@@ -3,11 +3,26 @@ import {useState, useEffect} from "react"
 import { Card, CardProps } from '../../Components/Card'
 import './styles.css'
 
+type GetInfo = HTMLElement | null;
+type ClearUser = {
+  clearInfo: {
+    value: string
+  }
+}
+
+
+
+type User = {
+  name: string
+  avatar: string
+ 
+}
+
 export function Home() {
 
- let [studentName, setStudentName] = useState()
+ let [studentName, setStudentName] = useState("")
  const [students, setStudents] = useState<CardProps[]>([])
- const [user, setUser] = useState({name:"", avatar:""})
+ const [user, setUser] = useState<User>({} as User)
 
   function handleAddStudent(){
     const newStudent ={
@@ -23,7 +38,6 @@ export function Home() {
       setStudents(prevState=>[newStudent, ...prevState])
     }
   }
-
   useEffect(()=>{
     studentName = ""
     const clearInfo = document.getElementById("inputData")
@@ -32,12 +46,12 @@ export function Home() {
 
   useEffect(()=>{
     fetch('https://api.github.com/users/carlos-evieira')
-    .then(response=>response.json())
+    .then(response=>response.json()) 
     .then(data=>{
       setUser({
         name: data.name,
         avatar: data.avatar_url,
-      })
+      }) 
     })
   }, [])
 
