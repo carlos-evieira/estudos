@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css Animation</title>
+    <style>
+      .ball{
+       
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: red;
+      position: relative;
+      
+      /* para aplicar animação, precisamos definir o nome da animação @keyframes  */
+      animation-name: example-two;
+      /* duração da animação  */
+      animation-duration:3s;
+      /* tempo para a animação começar */
+      animation-delay: 3s;
+      /* quantidade de vezes que a animação irá acontecer  */
+      animation-iteration-count: infinite;
+        /* direção que comecará a animação */
+      animation-direction:alternate-reverse;
+      }
+
+      @keyframes example-one{
+        from{
+          background-color: blueviolet;
+        }
+        to{
+          background-color: green;
+        }
+      }
+
+      @keyframes example-two{
+        0%{
+          background-color:blue;
+          left: 0;
+          top: 0;
+
+        }
+        25%{
+          background-color:yellow;
+          left: 600px;
+          top: 0;
+        }
+        50%{
+          background-color:orange;
+          left: 600px;
+          top: 600px;
+        }
+        75%{
+          background-color:green;
+          left: 0px;
+          top: 600px;
+        }
+        100%{
+          background-color:red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="ball"></div>
+</body>
+</html>

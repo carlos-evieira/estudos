@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css Animation</title>
+    <style>
+      div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: red;
+        position: relative;
+        text-align: center;
+        color: white;
+        font-family: sans-serif;
+        padding: 15px;
+        margin-bottom: 10px;
+
+        animation-name: example;
+        animation-duration: 5s;
+
+        animation-iteration-count: infinite;
+      }
+      .linear{
+        animation-timing-function: linear;
+      }
+      .ease{
+        animation-timing-function: ease;
+      }
+      .ease-in{
+        animation-timing-function: ease-in;
+      }
+      .ease-out{
+        animation-timing-function: ease-out;
+      }
+      .ease-in-out{
+        animation-timing-function: ease-in-out;
+      }
+      @keyframes example{
+        from{
+          left: 0
+        }
+        to{
+          left: calc(100% - 100px);
+          
+        }
+      }
+    </style>
+</head>
+<body>
+   <div class="linear"><strong>Linear</strong></div>
+   <div class="ease">Ease</div>
+   <div class="ease-in">Ease-in</div>
+   <div class="ease-out">Ease-out</div>
+   <div class="ease-in-out">Ease-in-out</div>
+</body>
+</html>
