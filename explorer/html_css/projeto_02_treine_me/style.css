@@ -1,0 +1,150 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: linear-gradient(180deg, rgba(227, 255, 248, 0) 82.08%, rgba(227, 255, 248, 0.38) 100%);
+  min-height: 100%vh;
+}
+.container{
+  
+  max-width: 1005px;
+  margin:  auto  ;
+  padding-top: 65px;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img{
+  width: 103px;
+}
+header, section{ 
+  font-family: 'Mulish', sans-serif;
+}
+
+header nav ul{ 
+  width: 267px;
+  display: flex;
+  justify-content: space-between;
+}
+
+li{
+  list-style: none;
+  font-size: 18px;
+
+}
+
+li a{
+  text-decoration: none;
+  color: #1F1534;
+  opacity: 0.5;
+}
+
+li a:hover{
+  font-weight: bold;
+  opacity: 1;
+}
+
+main{
+  display: flex;
+  margin-bottom: 42px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main h1 {
+  color: #000000;
+  font-size: 49px;
+  line-height: 56px;
+  margin: 109px 0 40px;
+
+  font-weight: 400;
+}
+
+main h1 span{
+  font-weight: 700;
+  color: #89C5CC
+}
+
+p, footer{
+  font-family: 'Open Sans', sans-serif;
+}
+
+main p{
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 28px;
+color: #7D7987;
+margin-bottom: 40px;;
+}
+
+section button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  width: 176px;
+  height: 56px;
+  padding: 14px 32px 15px;
+  gap: 10px;
+  background: #69B99D;
+  border-radius: 4px;
+  border: none;
+  
+  font-family: 'DM Sans', sans-serif;
+  transition: 0.2s ease-in-out;
+
+  cursor: pointer;
+}
+
+section button:hover{
+  background: #529980;
+
+}
+
+section button img{
+  width: 24px;
+  height: 24px;
+}
+
+section button span{
+  color: #F9F9F9;
+  font-weight: 500;
+  font-size: 13px;
+
+}
+
+main .girl{
+  margin-top: 36px;
+  height: 410px;
+}
+footer p{
+  margin-bottom: 30px;
+  text-align: center;
+  color: #000000;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+footer a{
+  text-decoration: none;
+  font-weight: 700;
+  color: #000000;
+}
+
+.balls{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 98.39px;
+  height: 88px;
+}
+
+
+
+  
