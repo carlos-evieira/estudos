@@ -1,0 +1,394 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  --max-width-mobile: 38.4rem;
+
+  --tc-button: #4A4E69;
+  --bg-button:#FEEAFA;
+  --tc-primary: #23053A;
+  --bg-primary: #EFF1FF;
+  --bg-header: #8E9AAF;
+  --logo-text: #FFFFFF;
+  --bg-header-secondary:#CBC0D3; 
+
+  --ff-headings: 'Staatliches', cursive;
+  --ff-text: 'Palanquin', sans-serif;
+  --ff-text-laptop:  'Roboto', sans-serif;
+  --ff-footer-laptop: 'Open Sans', sans-serif;
+
+}
+
+body{
+  background-color: var(--bg-primary);
+  font-family: var(--ff-headings);
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: var(--max-width-mobile);
+  margin: 0 auto;
+}
+
+.container-laptop{
+  display: none;
+}
+
+.container-tablet{
+  display: none;
+}
+
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  background: var(--bg-header);
+  height: 28.9rem;
+  
+}
+
+header img{
+  margin: 3.2rem 0;
+  height: 13.7rem;
+  width: auto;
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+header h1{
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+  color: var(--logo-text);
+  text-align: center;
+
+  background-color: var(--bg-header-secondary   );
+  
+  width: var(--max-width-mobile);
+  padding: .7rem ;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 1.4rem 3.2rem 6rem;
+
+}
+
+main p{
+  
+  font-family: var(--ff-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--tc-primary);
+
+  margin-bottom: 6.3rem;
+}
+
+.card {
+  position: relative;
+  /* max-width: var(--max-width-mobile); */
+  object-fit: cover;
+
+  animation: downtop .7s forwards;
+}
+
+main .card:nth-child(even){
+  height: 25rem;
+  width: 100%;
+}
+
+main .card:nth-child(odd){
+  height: 45rem;
+  width: 100%;
+  margin: 3.2rem 0;
+}
+
+.card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  
+}
+
+.card .button{
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  
+  width: fit-content;
+  height: 3.5rem;
+  
+  background: var(--bg-button);
+  color: var(--tc-button);
+  padding: 0 2.4rem;
+  border-radius: 2rem;
+
+
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+
+  animation: topdown 1s .3s ease backwards;
+}
+
+@keyframes topdown{
+  0%{
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop{
+  0%{
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header p{
+  display: none;
+}
+
+/* ------------------ tablet ------------------------- */
+@media(min-width:767px){
+ 
+  .container{
+   display: none;
+  }
+ 
+  
+  .container-laptop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 88rem;
+    height: 100vh;
+   }
+ 
+  .container-laptop header{
+    height: 100vh;
+    justify-content: center;
+   
+  }
+  .container-laptop header img{
+    margin: 5.2rem 0 3.2rem 0;
+    height: 10.7rem;
+    
+  }
+  .container-laptop header h1{
+    width: 33.7rem;
+  }
+  
+  .container-laptop header p {
+    display: inline;
+    font-family: var(--ff-text-laptop);
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 400;
+
+    color: var(--logo-text);
+    
+    text-align: center;
+    width: 25.5rem; 
+    margin: 3.2rem 0 8.5rem;
+  }
+  
+
+  .container-laptop .main-wrapper  main {
+    position: relative;
+    display: grid;
+    height: 100%;
+    gap: 1rem;
+    grid-auto-flow:column;
+    padding: 1.4rem 3.2rem 2rem; 
+    
+   animation: downtop 1s forwards;
+    
+    grid-template-areas:
+    "A B"
+    "C D"
+    "E F"
+    
+  }
+
+  .container-laptop .main-wrapper main .card:nth-child(1),
+  .container-laptop .main-wrapper main .card:nth-child(3),
+  .container-laptop .main-wrapper main .card:nth-child(4),
+  .container-laptop .main-wrapper main .card:nth-child(6)
+  {
+    height: 12rem;
+    width: 17.6rem;
+    margin: 0;
+  }
+
+  .container-laptop .main-wrapper main .card:nth-child(2),
+  .container-laptop .main-wrapper main .card:nth-child(5)
+  {
+    height: 23rem;
+    width: 17.6rem;
+    margin: 0;
+  }
+  
+  .card .button{
+    display: none;
+  }
+
+  footer p{
+    font-family: var(--ff-footer-laptop);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--tc-button);
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--tc-button);
+  }
+}
+
+/* ------------------ laptop ------------------------- */
+@media(min-width:1024px){
+ 
+  .container{
+   display: none;
+  }
+  .container-laptop{
+    display: none;
+  }
+  
+  .container-laptop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 123rem;
+   }
+ 
+  .container-laptop header{
+    height: 100vh;
+    justify-content: center;
+   
+  }
+  .container-laptop header img{
+    margin: 3.2rem 0;
+    height: 13.7rem;
+    
+  }
+  .container-laptop header h1{
+    width: 37.7rem;
+  }
+  
+  .container-laptop header p {
+    display: inline;
+    font-family: var(--ff-text-laptop);
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 400;
+
+    color: var(--logo-text);
+    
+    text-align: center;
+    width: 27.5rem; 
+    margin: 3.2rem 0 12.5rem;
+  }
+  
+
+  .container-laptop .main-wrapper  main {
+    display: grid;
+    height: 100;
+    gap: 3.2rem;
+    grid-auto-flow:dense;
+    /* margin-right: 9rem; */
+    
+   animation: downtop 1s forwards;
+    
+    grid-template-areas:
+    "A B C"
+    "D E F";
+    
+  }
+
+  .container-laptop .main-wrapper main .card:nth-child(odd)
+  {
+    height: 15rem;
+    width: 22rem;
+    margin: 0
+  }
+
+  .container-laptop .main-wrapper main .card:nth-child(even)
+  {
+    height: 35rem;
+    width: 22rem;
+    margin: 0;
+  }
+  
+  .container-laptop .main-wrapper main .card:nth-child(5)
+  {
+    margin-bottom: -20rem;
+  }
+
+  .container-laptop .main-wrapper main .card:nth-child(2)
+  {
+    margin-bottom: -20rem;
+  }
+   
+  .card .button{
+    display: none;
+  }
+
+  footer p{
+    font-family: var(--ff-footer-laptop);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--tc-button);
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--tc-button);
+  }
+}
+
+
